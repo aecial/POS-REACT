@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Button from "react-bootstrap/Button";
 const Child = ({ callback }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -29,9 +29,9 @@ const Child = ({ callback }) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit" id="pass">
+        <Button type="submit" id="pass">
           Submit
-        </button>
+        </Button>
       </form>
     </>
   );

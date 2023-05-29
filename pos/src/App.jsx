@@ -2,6 +2,11 @@ import { useState } from "react";
 import Child from "./Child";
 import Cashier from "./Cashier";
 import Manager from "./Manager";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
+import "./App.css";
+import Dropdown from "react-bootstrap/Dropdown";
+import NavigationBar from "./NavigationBar";
 
 function App() {
   const [nema, setNema] = useState("");
@@ -16,6 +21,7 @@ function App() {
   };
   return (
     <>
+      <NavigationBar />
       <h1>Hello World</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="inp_name">Enter Username</label>
@@ -25,7 +31,7 @@ function App() {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        <Button type="submit">Submit</Button>
       </form>
       <p>{nema}</p>
       <p>{acctype}</p>
@@ -39,6 +45,21 @@ function App() {
       ) : (
         "No account is goods"
       )}
+      <a href="https://google.com">Click here</a>
+      <Button variant="outline-success" className="mybtn">
+        Success
+      </Button>
+      <Dropdown>
+        <Dropdown.Toggle variant="success" id="dropdown-basic">
+          Dropdown Button
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item href="https://google.com">Action</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
     </>
   );
 }
